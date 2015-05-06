@@ -41,8 +41,8 @@
 
     
     <modelVersion>4.0.0</modelVersion>
-    <groupId>jaxws-snippets</groupId>
-    <artifactId>jaxws-snippets</artifactId>
+    <groupId>jaxws-metro-snippets</groupId>
+    <artifactId>jaxws-metro-snippets</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     
