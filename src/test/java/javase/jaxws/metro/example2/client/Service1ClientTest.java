@@ -8,7 +8,7 @@ import org.junit.Test;
 public class Service1ClientTest {
 	@Test
 	public void test1() {
-	System.out.println(Service1Client.sayHello());
+		System.out.println(Service1Client.sayHello());
 		assertTrue(Service1Client.sayHello().contains("Hello World"));
 	}
 }
