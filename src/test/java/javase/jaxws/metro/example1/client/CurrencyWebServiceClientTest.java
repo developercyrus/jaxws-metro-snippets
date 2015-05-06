@@ -10,9 +10,9 @@ public class CurrencyWebServiceClientTest {
 	// sometimes it can't connect to
 	// http://www.webservicex.net/CurrencyConvertor.asmx?WSDL
 	// @Ignore
-	@Test
-	public void testUSD2HK() {
-		System.out.println(CurrencyWebServiceClient.USD2HK());
-		assertTrue(CurrencyWebServiceClient.USD2HK() > 0.0D);
-	}
+    @Test
+    public void testUSD2HK() {
+        System.out.println(CurrencyWebServiceClient.USD2HK());
+        assertTrue(CurrencyWebServiceClient.USD2HK() > 0.0D);
+    }
 }

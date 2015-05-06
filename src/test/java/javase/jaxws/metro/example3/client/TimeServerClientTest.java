@@ -13,13 +13,13 @@ public class TimeServerClientTest {
 	@Test
 	public void test1() {
 		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-
+		
 		String actual = TimeServerClient.getTimeAsUTC();
 		String expected = f.format(new Date());
-
+		
 		System.out.println(actual);
 		System.out.println(expected);
-
+		
 		assertEquals(expected.compareTo(actual), 0);
 	}
 }
