@@ -127,6 +127,12 @@
                                 </exec>
                                 -->
                                 
+                                <!-- 
+                                    1.  it creates 2 java.exe instance, suspected one is from "mvn install" itself
+                                    2.  both are killed by wildcard "java.ex*"
+                                
+                                 -->
+                                
                                 <echo message="javase.jaxws.metro.example3.server.TimeServerPublisher" /> 
                                 <java classname="javase.jaxws.metro.example3.server.TimeServerPublisher" fork="true" spawn="true">      
                                 	<classpath>     
@@ -205,16 +211,15 @@
                         </goals>
                    </execution>      
                    
-                   
+                  
                    <execution>
                         <id>javase.jaxws.metro.example2.stub | stop-endpoint</id>
                         <phase>post-integration-test</phase>
                         <configuration>
                             <target>                                                               
-                                <echo message="C:\Windows\System32\taskkill.exe /F /IM java.exe" /> 
+                                <echo message='C:\Windows\System32\taskkill.exe /F /FI "IMAGENAME eq java.ex*"' /> 
                                 <exec executable="C:\Windows\System32\taskkill.exe" spawn="true">
-                                    <arg value="/F /IM" />
-                                    <arg value="java.exe" />
+                                    <arg value="/F /FI 'IMAGENAME eq java.ex*'" />
                                 </exec>
                             </target>
                         </configuration>
