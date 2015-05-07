@@ -15,14 +15,14 @@
        
        	Approach1 - all automate
         1.	"mvn install". This will include 
-         		a) launch IIS / endpoint in example3
+         		a) launch IISExpress / example3 endpoint 
          		b) generate java stub from server
-         		c) run unit test 
-         		d) close IIS in post-integration-test phase
-        2.  this project does not include integration test 
+         		c) run integration test 
+         		d) close IISExpress / example3 endpoint in post-integration-test phase
+        2.  this project includes integration test 
         3.  with maven-failsafe-plugin, any java file name with "IT" will be treated as 
-             intergration test (by maven, the phase is integration-test). Here use this plugin 
-             because it help to close up IISExpress at the end
+            intergration test (by maven, the phase is integration-test). 
+            it also help to close up IISExpress / example3 endpoint at the end (by maven, the phase is post-integration-test)
         4)  the integration test report can be found in \target\failsafe-reports
        
        
@@ -294,9 +294,23 @@
 		                    <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
                         </configuration>                  
                     </execution>
-                </executions>    
-                                                          
-            </plugin>         
+                </executions>                                                             
+            </plugin>     
+            
+            <!-- integration-test -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.12</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+                
         </plugins>    
     </build>     
     

@@ -9,7 +9,7 @@ import javase.jaxws.metro.example3.client.TimeServerClient;
 
 import org.junit.Test;
 
-public class TimeServerClientTest {
+public class TimeServerClientIT {
     @Test
     public void test1() {
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");

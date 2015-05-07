@@ -5,7 +5,7 @@ import javase.jaxws.metro.example1.client.CurrencyWebServiceClient;
 
 import org.junit.Test;
 
-public class CurrencyWebServiceClientTest {
+public class CurrencyWebServiceClientIT {
 
     // sometimes it can't connect to
     // http://www.webservicex.net/CurrencyConvertor.asmx?WSDL
